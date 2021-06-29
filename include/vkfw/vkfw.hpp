@@ -427,17 +427,17 @@ namespace VKFW_NAMESPACE {
 		VKFW_ENUMERATOR(PlatformError) = GLFW_PLATFORM_ERROR,
 		VKFW_ENUMERATOR(FormatUnavailable) = GLFW_FORMAT_UNAVAILABLE,
 		VKFW_ENUMERATOR(NoWindowContext) = GLFW_NO_WINDOW_CONTEXT,
-    VKFW_ENUMERATOR(CursorUnavailable) = GLFW_CURSOR_UNAVAILABLE,
-    VKFW_ENUMERATOR(FeatureUnavailable) = GLFW_FEATURE_UNAVAILABLE,
-    VKFW_ENUMERATOR(FeatureUnimplemented) = GLFW_FEATURE_UNIMPLEMENTED
+		VKFW_ENUMERATOR(CursorUnavailable) = GLFW_CURSOR_UNAVAILABLE,
+		VKFW_ENUMERATOR(FeatureUnavailable) = GLFW_FEATURE_UNAVAILABLE,
+		VKFW_ENUMERATOR(FeatureUnimplemented) = GLFW_FEATURE_UNIMPLEMENTED
 	};
 	VKFW_INLINE VKFW_CONSTEXPR bool check(Result result) { return result == Result::VKFW_ENUMERATOR(Success); }
 	enum class InitializationHint {
 		VKFW_ENUMERATOR(JoystickHatButtons) = GLFW_JOYSTICK_HAT_BUTTONS,
 		VKFW_ENUMERATOR(CocoaChdirResources) = GLFW_COCOA_CHDIR_RESOURCES, // MacOS specific
 		VKFW_ENUMERATOR(CocoaMenubar) = GLFW_COCOA_MENUBAR, // MacOS specific
-    VKFW_ENUMERATOR(AnglePlatformType) = GLFW_ANGLE_PLATFORM_TYPE,
-    VKFW_ENUMERATOR(X11XcbVulkanSurface) = GLFW_X11_XCB_VULKAN_SURFACE // X11 specific
+		VKFW_ENUMERATOR(AnglePlatformType) = GLFW_ANGLE_PLATFORM_TYPE,
+		VKFW_ENUMERATOR(X11XcbVulkanSurface) = GLFW_X11_XCB_VULKAN_SURFACE // X11 specific
 	};
 	enum class WindowHint {
 
@@ -452,7 +452,7 @@ namespace VKFW_NAMESPACE {
 		VKFW_ENUMERATOR(CenterCursor) = GLFW_CENTER_CURSOR,
 		VKFW_ENUMERATOR(TransparentFramebuffer) = GLFW_TRANSPARENT_FRAMEBUFFER,
 		VKFW_ENUMERATOR(FocusOnShow) = GLFW_FOCUS_ON_SHOW,
-    VKFW_ENUMERATOR(MousePassthrough) = GLFW_MOUSE_PASSTHROUGH,
+		VKFW_ENUMERATOR(MousePassthrough) = GLFW_MOUSE_PASSTHROUGH,
 
 		// Framebuffer Hints
 		VKFW_ENUMERATOR(RedBits) = GLFW_RED_BITS,
@@ -481,7 +481,7 @@ namespace VKFW_NAMESPACE {
 		//VKFW_ENUMERATOR(ContextRevision) = GLFW_CONTEXT_REVISION,
 		VKFW_ENUMERATOR(ContextRobustness) = GLFW_CONTEXT_ROBUSTNESS,
 		VKFW_ENUMERATOR(OpenGLForwardCompatibility) = GLFW_OPENGL_FORWARD_COMPAT,
-    VKFW_ENUMERATOR(ContextDebug) = GLFW_CONTEXT_DEBUG,
+		VKFW_ENUMERATOR(ContextDebug) = GLFW_CONTEXT_DEBUG,
 		VKFW_ENUMERATOR(OpenGLDebugContext) = GLFW_OPENGL_DEBUG_CONTEXT,
 		VKFW_ENUMERATOR(OpenGLProfile) = GLFW_OPENGL_PROFILE,
 		VKFW_ENUMERATOR(ContextReleaseBehavior) = GLFW_CONTEXT_RELEASE_BEHAVIOR,
@@ -497,8 +497,8 @@ namespace VKFW_NAMESPACE {
 		VKFW_ENUMERATOR(X11ClassName) = GLFW_X11_CLASS_NAME,
 		VKFW_ENUMERATOR(X11InstanceName) = GLFW_X11_INSTANCE_NAME,
 
-    // Win32 specific Hints
-    VKFW_ENUMERATOR(Win32KeyboardMenu) = GLFW_WIN32_KEYBOARD_MENU,
+		// Win32 specific Hints
+		VKFW_ENUMERATOR(Win32KeyboardMenu) = GLFW_WIN32_KEYBOARD_MENU,
 	};
 	enum class Attribute {
 		// Window Attributes
@@ -513,7 +513,7 @@ namespace VKFW_NAMESPACE {
 		VKFW_ENUMERATOR(TransparentFramebuffer) = GLFW_TRANSPARENT_FRAMEBUFFER,
 		VKFW_ENUMERATOR(Hovered) = GLFW_HOVERED,
 		VKFW_ENUMERATOR(FocusOnShow) = GLFW_FOCUS_ON_SHOW,
-    VKFW_ENUMERATOR(MousePassthrough) = GLFW_MOUSE_PASSTHROUGH,
+		VKFW_ENUMERATOR(MousePassthrough) = GLFW_MOUSE_PASSTHROUGH,
 
 		// Context client API Attributes
 		VKFW_ENUMERATOR(ClientAPI) = GLFW_CLIENT_API,
@@ -567,27 +567,27 @@ namespace VKFW_NAMESPACE {
 		VKFW_ENUMERATOR(EGL) = GLFW_EGL_CONTEXT_API,
 		VKFW_ENUMERATOR(OSMESA) = GLFW_OSMESA_CONTEXT_API,
 	};
-  enum class AnglePlatformType {
-    VKFW_ENUMERATOR(None) = GLFW_ANGLE_PLATFORM_TYPE_NONE,
-    VKFW_ENUMERATOR(OpenGL) = GLFW_ANGLE_PLATFORM_TYPE_OPENGL,
-    VKFW_ENUMERATOR(OpenGLES) = GLFW_ANGLE_PLATFORM_TYPE_OPENGLES,
-    VKFW_ENUMERATOR(D3D9) = GLFW_ANGLE_PLATFORM_TYPE_D3D9,
-    VKFW_ENUMERATOR(D3D11) = GLFW_ANGLE_PLATFORM_TYPE_D3D11,
-    VKFW_ENUMERATOR(Vulkan) = GLFW_ANGLE_PLATFORM_TYPE_VULKAN,
-    VKFW_ENUMERATOR(Metal) = GLFW_ANGLE_PLATFORM_TYPE_METAL,
-  };
+	enum class AnglePlatformType {
+		VKFW_ENUMERATOR(None) = GLFW_ANGLE_PLATFORM_TYPE_NONE,
+		VKFW_ENUMERATOR(OpenGL) = GLFW_ANGLE_PLATFORM_TYPE_OPENGL,
+		VKFW_ENUMERATOR(OpenGLES) = GLFW_ANGLE_PLATFORM_TYPE_OPENGLES,
+		VKFW_ENUMERATOR(D3D9) = GLFW_ANGLE_PLATFORM_TYPE_D3D9,
+		VKFW_ENUMERATOR(D3D11) = GLFW_ANGLE_PLATFORM_TYPE_D3D11,
+		VKFW_ENUMERATOR(Vulkan) = GLFW_ANGLE_PLATFORM_TYPE_VULKAN,
+		VKFW_ENUMERATOR(Metal) = GLFW_ANGLE_PLATFORM_TYPE_METAL,
+	};
 	enum class CursorShape {
 		VKFW_ENUMERATOR(Arrow) = GLFW_ARROW_CURSOR,
 		VKFW_ENUMERATOR(IBeam) = GLFW_IBEAM_CURSOR,
 		VKFW_ENUMERATOR(Crosshair) = GLFW_CROSSHAIR_CURSOR,
-    VKFW_ENUMERATOR(PointingHand) = GLFW_POINTING_HAND_CURSOR,
-    VKFW_ENUMERATOR(ResizeEW) = GLFW_RESIZE_EW_CURSOR,
-    VKFW_ENUMERATOR(ResizeNS) = GLFW_RESIZE_NS_CURSOR,
-    VKFW_ENUMERATOR(ResizeNWSE) = GLFW_RESIZE_NWSE_CURSOR,
-    VKFW_ENUMERATOR(ResizeNESW) = GLFW_RESIZE_NESW_CURSOR,
-    VKFW_ENUMERATOR(ResizeAll) = GLFW_RESIZE_ALL_CURSOR,
-    VKFW_ENUMERATOR(NotAllowed) = GLFW_NOT_ALLOWED_CURSOR,
-    // legacy names
+		VKFW_ENUMERATOR(PointingHand) = GLFW_POINTING_HAND_CURSOR,
+		VKFW_ENUMERATOR(ResizeEW) = GLFW_RESIZE_EW_CURSOR,
+		VKFW_ENUMERATOR(ResizeNS) = GLFW_RESIZE_NS_CURSOR,
+		VKFW_ENUMERATOR(ResizeNWSE) = GLFW_RESIZE_NWSE_CURSOR,
+		VKFW_ENUMERATOR(ResizeNESW) = GLFW_RESIZE_NESW_CURSOR,
+		VKFW_ENUMERATOR(ResizeAll) = GLFW_RESIZE_ALL_CURSOR,
+		VKFW_ENUMERATOR(NotAllowed) = GLFW_NOT_ALLOWED_CURSOR,
+		// legacy names
 		VKFW_ENUMERATOR(HResize) = GLFW_HRESIZE_CURSOR,
 		VKFW_ENUMERATOR(VResize) = GLFW_VRESIZE_CURSOR,
 		VKFW_ENUMERATOR(Hand) = GLFW_HAND_CURSOR,
@@ -1021,10 +1021,10 @@ namespace VKFW_NAMESPACE {
 		: std::true_type { using type = bool; };
 	template<> struct InitializationHintTraits<InitializationHint::VKFW_ENUMERATOR(CocoaMenubar)>
 		: std::true_type { using type = bool; };
-  template<> struct InitializationHintTraits<InitializationHint::VKFW_ENUMERATOR(AnglePlatformType)>
-    : std::integral_constant<AnglePlatformType, AnglePlatformType::eNone> { using type = AnglePlatformType; };
-  template<> struct InitializationHintTraits<InitializationHint::VKFW_ENUMERATOR(X11XcbVulkanSurface)>
-    : std::true_type { using type = bool; };
+	template<> struct InitializationHintTraits<InitializationHint::VKFW_ENUMERATOR(AnglePlatformType)>
+		: std::integral_constant<AnglePlatformType, AnglePlatformType::eNone> { using type = AnglePlatformType; };
+	template<> struct InitializationHintTraits<InitializationHint::VKFW_ENUMERATOR(X11XcbVulkanSurface)>
+		: std::true_type { using type = bool; };
 
 	template <WindowHint hint> struct WindowHintTraits;
 	template<> struct WindowHintTraits<WindowHint::VKFW_ENUMERATOR(Focused)>
@@ -1047,8 +1047,8 @@ namespace VKFW_NAMESPACE {
 		{ using type = bool; };
 	template<> struct WindowHintTraits<WindowHint::VKFW_ENUMERATOR(FocusOnShow)>
 		{ using type = bool; };
-  template<> struct WindowHintTraits<WindowHint::VKFW_ENUMERATOR(MousePassthrough)>
-    { using type = bool; };
+	template<> struct WindowHintTraits<WindowHint::VKFW_ENUMERATOR(MousePassthrough)>
+		{ using type = bool; };
 	template<> struct WindowHintTraits<WindowHint::VKFW_ENUMERATOR(RedBits)>
 		{ using type = unsigned; };
 	template<> struct WindowHintTraits<WindowHint::VKFW_ENUMERATOR(GreenBits)>
@@ -1093,7 +1093,7 @@ namespace VKFW_NAMESPACE {
 		{ using type = ContextRobustness; };
 	template<> struct WindowHintTraits<WindowHint::VKFW_ENUMERATOR(OpenGLForwardCompatibility)>
 		{ using type = bool; };
-  /* also for OpenGLDebugContext */
+	/* also for OpenGLDebugContext */
 	template<> struct WindowHintTraits<WindowHint::VKFW_ENUMERATOR(ContextDebug)>
 		{ using type = bool; };
 	template<> struct WindowHintTraits<WindowHint::VKFW_ENUMERATOR(OpenGLProfile)>
@@ -1129,8 +1129,8 @@ namespace VKFW_NAMESPACE {
 		using type = char const *;
 #endif
 	};
-  template<> struct WindowHintTraits<WindowHint::VKFW_ENUMERATOR(Win32KeyboardMenu)>
-    { using type = bool; };
+	template<> struct WindowHintTraits<WindowHint::VKFW_ENUMERATOR(Win32KeyboardMenu)>
+		{ using type = bool; };
 
 	template <Attribute attribute> struct AttributeTraits;
 	template<> struct AttributeTraits<Attribute::VKFW_ENUMERATOR(Focused)>
@@ -1155,8 +1155,8 @@ namespace VKFW_NAMESPACE {
 		: std::false_type { using type = bool; };
 	template<> struct AttributeTraits<Attribute::VKFW_ENUMERATOR(FocusOnShow)>
 		: std::true_type { using type = bool; };
-  template<> struct AttributeTraits<Attribute::VKFW_ENUMERATOR(MousePassthrough)>
-    : std::true_type { using type = bool; };
+	template<> struct AttributeTraits<Attribute::VKFW_ENUMERATOR(MousePassthrough)>
+		: std::true_type { using type = bool; };
 	template<> struct AttributeTraits<Attribute::VKFW_ENUMERATOR(ClientAPI)>
 		: std::false_type { using type = ClientAPI; };
 	template<> struct AttributeTraits<Attribute::VKFW_ENUMERATOR(ContextVersionMajor)>
@@ -1959,14 +1959,14 @@ namespace VKFW_NAMESPACE {
 			OptionalInitializationHint<InitializationHint::VKFW_ENUMERATOR(JoystickHatButtons)> joystickHatButtons_ = nullopt,
 			OptionalInitializationHint<InitializationHint::VKFW_ENUMERATOR(CocoaChdirResources)> cocoaChdirResources_ = nullopt,
 			OptionalInitializationHint<InitializationHint::VKFW_ENUMERATOR(CocoaMenubar)> cocoaMenubar_ = nullopt,
-      OptionalInitializationHint<InitializationHint::VKFW_ENUMERATOR(AnglePlatformType)> anglePlatformType_ = nullopt,
-      OptionalInitializationHint<InitializationHint::VKFW_ENUMERATOR(X11XcbVulkanSurface)> x11XcbVulkanSurface_ = nullopt
+			OptionalInitializationHint<InitializationHint::VKFW_ENUMERATOR(AnglePlatformType)> anglePlatformType_ = nullopt,
+			OptionalInitializationHint<InitializationHint::VKFW_ENUMERATOR(X11XcbVulkanSurface)> x11XcbVulkanSurface_ = nullopt
 		) VKFW_NOEXCEPT
 			: joystickHatButtons(joystickHatButtons_)
 			, cocoaChdirResources(cocoaChdirResources_)
 			, cocoaMenubar(cocoaMenubar_)
-      , anglePlatformType(anglePlatformType_)
-      , x11XcbVulkanSurface(x11XcbVulkanSurface_) {}
+			, anglePlatformType(anglePlatformType_)
+			, x11XcbVulkanSurface(x11XcbVulkanSurface_) {}
 # endif
 	public:
 		OptionalInitializationHint<InitializationHint::VKFW_ENUMERATOR(JoystickHatButtons)>
@@ -1993,8 +1993,8 @@ namespace VKFW_NAMESPACE {
 		if (!check(result = setInitHint(hints.joystickHatButtons))) return result;
 		if (!check(result = setInitHint(hints.cocoaChdirResources))) return result;
 		if (!check(result = setInitHint(hints.cocoaMenubar))) return result;
-    if (!check(result = setInitHint(hints.anglePlatformType))) return result;
-    if (!check(result = setInitHint(hints.x11XcbVulkanSurface))) return result;
+		if (!check(result = setInitHint(hints.anglePlatformType))) return result;
+		if (!check(result = setInitHint(hints.x11XcbVulkanSurface))) return result;
 		return result;
 	}
 #endif
@@ -2064,7 +2064,7 @@ namespace VKFW_NAMESPACE {
 			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(CocoaGraphicsSwitching)> cocoaGraphicsSwitching_ = nullopt,
 			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(X11ClassName)> x11ClassName_ = nullopt,
 			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(X11InstanceName)> x11InstanceName_ = nullopt,
-      OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(Win32KeyboardMenu)> win32KeyboardMenu_ = nullopt
+			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(Win32KeyboardMenu)> win32KeyboardMenu_ = nullopt
 		) VKFW_NOEXCEPT
 		: resizable(resizable_)
 		, visible(visible_)
@@ -2108,7 +2108,7 @@ namespace VKFW_NAMESPACE {
 		, cocoaGraphicsSwitching(cocoaGraphicsSwitching_)
 		, x11ClassName(x11ClassName_)
 		, x11InstanceName(x11InstanceName_)
-    , win32KeyboardMenu(win32KeyboardMenu_) {}
+		, win32KeyboardMenu(win32KeyboardMenu_) {}
 # endif
 	public:
 		OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(Resizable)>
@@ -2195,8 +2195,8 @@ namespace VKFW_NAMESPACE {
 			x11ClassName = nullopt;
 		OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(X11InstanceName)>
 			x11InstanceName = nullopt;
-    OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(Win32KeyboardMenu)>
-      win32KeyboardMenu = nullopt;
+		OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(Win32KeyboardMenu)>
+			win32KeyboardMenu = nullopt;
 	};
 	template<WindowHint hint>
 	Result setWindowHint(OptionalWindowHint<hint> optional_hint) {
@@ -2249,7 +2249,7 @@ namespace VKFW_NAMESPACE {
 		if (!check(result = setWindowHint(hints.cocoaGraphicsSwitching))) return result;
 		if (!check(result = setWindowHint(hints.x11ClassName))) return result;
 		if (!check(result = setWindowHint(hints.x11InstanceName))) return result;
-    if (!check(result = setWindowHint(hints.win32KeyboardMenu))) return result;
+		if (!check(result = setWindowHint(hints.win32KeyboardMenu))) return result;
 		return result;
 	}
 #endif
