@@ -2064,7 +2064,7 @@ namespace VKFW_NAMESPACE {
 			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(CocoaGraphicsSwitching)> cocoaGraphicsSwitching_ = nullopt,
 			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(X11ClassName)> x11ClassName_ = nullopt,
 			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(X11InstanceName)> x11InstanceName_ = nullopt,
-      OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(Win32KeyboardMenu)> win32KeyboardMenu_ = nullopt,
+      OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(Win32KeyboardMenu)> win32KeyboardMenu_ = nullopt
 		) VKFW_NOEXCEPT
 		: resizable(resizable_)
 		, visible(visible_)
