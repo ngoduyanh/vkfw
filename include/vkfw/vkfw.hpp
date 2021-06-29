@@ -114,8 +114,8 @@
 #define VKFW_TARGET_GLFW_VERSION_MINOR 4
 
 static_assert(GLFW_VERSION_MAJOR == VKFW_TARGET_GLFW_VERSION_MAJOR
-				&& GLFW_VERSION_MINOR == VKFW_TARGET_GLFW_VERSION_MINOR
-				, "\"glfw3.h\" version is not compatible with the \"vkfw.hpp\" version!");
+			  && GLFW_VERSION_MINOR == VKFW_TARGET_GLFW_VERSION_MINOR
+			  , "\"glfw3.h\" version is not compatible with the \"vkfw.hpp\" version!");
 
 #ifndef VKFW_INLINE
 # ifdef __clang__
@@ -714,27 +714,27 @@ namespace VKFW_NAMESPACE {
 	}
 # endif
 	VKFW_CONSTEXPR ModifierKeyFlags operator&(ModifierKeyBits bit, 
-												ModifierKeyFlags const &flags) VKFW_NOEXCEPT {
+											  ModifierKeyFlags const &flags) VKFW_NOEXCEPT {
 		return flags & bit;
 	}
 	VKFW_CONSTEXPR ModifierKeyFlags operator|(ModifierKeyBits bit, 
-												ModifierKeyFlags const &flags) VKFW_NOEXCEPT {
+											  ModifierKeyFlags const &flags) VKFW_NOEXCEPT {
 		return flags | bit;
 	}
 	VKFW_CONSTEXPR ModifierKeyFlags operator^(ModifierKeyBits bit, 
-												ModifierKeyFlags const &flags) VKFW_NOEXCEPT {
+											  ModifierKeyFlags const &flags) VKFW_NOEXCEPT {
 		return flags ^ bit;
 	}
 	VKFW_INLINE VKFW_CONSTEXPR ModifierKeyFlags operator|(ModifierKeyBits bit0,
-															ModifierKeyBits bit1) VKFW_NOEXCEPT {
+														  ModifierKeyBits bit1) VKFW_NOEXCEPT {
 		return ModifierKeyFlags(bit0) | bit1;
 	}
 	VKFW_INLINE VKFW_CONSTEXPR ModifierKeyFlags operator&(ModifierKeyBits bit0,
-															ModifierKeyBits bit1) VKFW_NOEXCEPT {
+														  ModifierKeyBits bit1) VKFW_NOEXCEPT {
 		return ModifierKeyFlags(bit0) & bit1;
 	}
 	VKFW_INLINE VKFW_CONSTEXPR ModifierKeyFlags operator^(ModifierKeyBits bit0,
-															ModifierKeyBits bit1) VKFW_NOEXCEPT {
+														  ModifierKeyBits bit1) VKFW_NOEXCEPT {
 		return ModifierKeyFlags(bit0) ^ bit1;
 	}
 	VKFW_INLINE VKFW_CONSTEXPR ModifierKeyFlags operator~(ModifierKeyBits bits) VKFW_NOEXCEPT {
@@ -1772,10 +1772,10 @@ namespace VKFW_NAMESPACE {
 
 		VKFW_NODISCARD_WHEN_NO_EXCEPTIONS typename ResultValueType<void>::type
 			setSizeLimits(size_t minimum_width, size_t minimum_height,
-							size_t maximum_width, size_t maximum_height) const;
+						  size_t maximum_width, size_t maximum_height) const;
 		VKFW_NODISCARD_WHEN_NO_EXCEPTIONS typename ResultValueType<void>::type
 			setSizeLimits(std::tuple<size_t, size_t> minimum_size,
-							std::tuple<size_t, size_t> maximum_size) const;
+						  std::tuple<size_t, size_t> maximum_size) const;
 		VKFW_NODISCARD_WHEN_NO_EXCEPTIONS typename ResultValueType<void>::type
 			setSizeLimits(std::tuple<size_t, size_t, size_t, size_t> limits) const;
 		VKFW_NODISCARD_WHEN_NO_EXCEPTIONS typename ResultValueType<void>::type
@@ -1818,10 +1818,10 @@ namespace VKFW_NAMESPACE {
 		VKFW_NODISCARD typename ResultValueType<Monitor>::type getMonitor() const;
 		VKFW_NODISCARD_WHEN_NO_EXCEPTIONS typename ResultValueType<void>::type
 			setMonitor(Monitor const &monitor, int xpos, int ypos,
-						 size_t width, size_t height, size_t refreshRate = 0) const;
+					   size_t width, size_t height, size_t refreshRate = 0) const;
 		VKFW_NODISCARD_WHEN_NO_EXCEPTIONS typename ResultValueType<void>::type
 			setMonitor(Monitor const &monitor, std::tuple<int, int> pos,
-						 std::tuple<size_t, size_t> size, size_t refreshRate = 0) const;
+					   std::tuple<size_t, size_t> size, size_t refreshRate = 0) const;
 
 # ifdef VKFW_HAS_SPAN
 		VKFW_NODISCARD_WHEN_NO_EXCEPTIONS typename ResultValueType<void>::type
@@ -2355,9 +2355,9 @@ namespace VKFW_NAMESPACE {
 	using UniqueWindow = UniqueHandle<Window>;
 	VKFW_NODISCARD typename ResultValueType<UniqueWindow>::type
 		createWindowUnique(size_t width, size_t height, char const *title,
-							 WindowHints const &hints = WindowHints{},
-							 Monitor monitor = nullptr, Window share = nullptr,
-							 bool reset_hints = true);
+						   WindowHints const &hints = WindowHints{},
+						   Monitor monitor = nullptr, Window share = nullptr,
+						   bool reset_hints = true);
 # endif
 #endif
 
@@ -2393,7 +2393,7 @@ namespace VKFW_NAMESPACE {
 	void requestWindowAttention(GLFWwindow *window);
 	GLFWmonitor *getWindowMonitor(GLFWwindow *window);
 	void setWindowMonitor(GLFWwindow *window, GLFWmonitor *monitor, int xpos, int ypos,
-							size_t width, size_t height, size_t refreshRate);
+						  size_t width, size_t height, size_t refreshRate);
 
 # ifdef VKFW_HAS_SPAN
 	void setWindowIcon(std::span<vkfw::Image> images);
@@ -2686,7 +2686,7 @@ namespace VKFW_NAMESPACE {
 																		 VkPhysicalDevice device,
 																		 uint32_t queuefamily) {
 		return static_cast<bool>(glfwGetPhysicalDevicePresentationSupport(instance, device,
-																			queuefamily));
+																		  queuefamily));
 	}
 #ifdef VKFW_DISABLE_ENHANCED_MODE
 	VKFW_INLINE VkResult createWindowSurface(VkInstance instance, GLFWwindow *window,
@@ -2706,7 +2706,7 @@ namespace VKFW_NAMESPACE {
 #   ifndef VKFW_NO_SMART_HANDLE
 	VKFW_NODISCARD VKFW_INLINE vk::UniqueSurfaceKHR 
 	createWindowSurfaceUnique(vk::Instance const &instance, Window const &window,
-								VkAllocationCallbacks const *allocator = nullptr) {
+							  VkAllocationCallbacks const *allocator = nullptr) {
 		VkSurfaceKHR output;
 		glfwCreateWindowSurface(instance, window, allocator, &output);
 
@@ -2901,15 +2901,15 @@ namespace VKFW_NAMESPACE {
 
 		Result result = setInitHints(hints);
 		if (!check(result)) return createResultValueUnique(result, instance,
-															 VKFW_NAMESPACE_STRING"::initUnique");
+														   VKFW_NAMESPACE_STRING"::initUnique");
 
 		if (glfwInit()) {
 			instance = true;
 			return createResultValueUnique(Result::VKFW_ENUMERATOR(Success), instance,
-											 VKFW_NAMESPACE_STRING"::initUnique");
+										   VKFW_NAMESPACE_STRING"::initUnique");
 		} else
 			return createResultValueUnique(getError(), instance,
-											 VKFW_NAMESPACE_STRING"::initUnique");
+										   VKFW_NAMESPACE_STRING"::initUnique");
 	}
 # endif
 #endif
@@ -2944,7 +2944,7 @@ namespace VKFW_NAMESPACE {
 		if (check(result)) {
 			output.reserve(static_cast<size_t>(count));
 			std::transform(ptr, ptr + count, std::back_inserter(output),
-							 [](GLFWmonitor *monitor) { return Monitor(monitor); });
+						   [](GLFWmonitor *monitor) { return Monitor(monitor); });
 			VKFW_ASSERT(output.size() == static_cast<size_t>(count));
 		}
 		return createResultValue(result, output, VKFW_NAMESPACE_STRING"::getMonitors");
@@ -3077,7 +3077,7 @@ namespace VKFW_NAMESPACE {
 		std::tuple<int, int, size_t, size_t> output;
 		int temp_width, temp_height;
 		glfwGetMonitorWorkarea(m_monitor, &std::get<0>(output), &std::get<1>(output),
-								 &temp_width, &temp_height);
+							   &temp_width, &temp_height);
 		Result result = getError();
 		if (check(result)) {
 			std::get<2>(output) = temp_width;
@@ -3341,7 +3341,7 @@ namespace VKFW_NAMESPACE {
 				auto *ptr = reinterpret_cast<DynamicCallbackStorage *>(glfwGetWindowUserPointer(window));
 				if (ptr && ptr->on_framebuffer_resize)
 					ptr->on_framebuffer_resize(window, static_cast<size_t>(width),
-												 static_cast<size_t>(height));
+											   static_cast<size_t>(height));
 			});
 			glfwSetWindowContentScaleCallback(window_ptr, [](GLFWwindow *window, float xscale, float yscale) {
 				auto *ptr = reinterpret_cast<DynamicCallbackStorage *>(glfwGetWindowUserPointer(window));
@@ -3389,7 +3389,7 @@ namespace VKFW_NAMESPACE {
 					std::vector<std::string_view> output;
 					output.reserve(path_count);
 					std::transform(paths, paths + path_count, std::back_inserter(output),
-									 [](char const *path) { return std::string_view{ path }; });
+								   [](char const *path) { return std::string_view{ path }; });
 					ptr->on_drop(window, std::move(output));
 #   else
 					ptr->on_drop(window, std::vector<char const *>(paths, paths + path_count));
@@ -3413,7 +3413,7 @@ namespace VKFW_NAMESPACE {
 			return createResultValue(result, output, VKFW_NAMESPACE_STRING"::setWindowHints");
 
 		output = glfwCreateWindow(static_cast<int>(width), static_cast<int>(height),
-									title, monitor, share);
+								  title, monitor, share);
 # ifndef VKFW_NO_STD_FUNCTION_CALLBACKS
 		setup_DynamicCallbackStorage(output);
 # endif
@@ -3422,7 +3422,7 @@ namespace VKFW_NAMESPACE {
 # ifndef VKFW_NO_SMART_HANDLE
 	VKFW_NODISCARD VKFW_INLINE typename ResultValueType<UniqueWindow>::type
 	createWindowUnique(size_t width, size_t height, char const *title, WindowHints const &hints,
-						 Monitor monitor, Window share, bool reset_hints) {
+					   Monitor monitor, Window share, bool reset_hints) {
 		Window output;
 		if (reset_hints) {
 			Result result = defaultWindowHints();
@@ -3434,7 +3434,7 @@ namespace VKFW_NAMESPACE {
 			return createResultValueUnique(result, output, VKFW_NAMESPACE_STRING"::setWindowHints");
 
 		output = glfwCreateWindow(static_cast<int>(width), static_cast<int>(height),
-									title, monitor, share);
+								  title, monitor, share);
 # ifndef VKFW_NO_STD_FUNCTION_CALLBACKS
 		setup_DynamicCallbackStorage(output);
 # endif
@@ -3511,8 +3511,8 @@ namespace VKFW_NAMESPACE {
 										size_t *right, size_t *bottom) {
 		int temp_left, temp_top, temp_right, temp_bottom;
 		glfwGetWindowFrameSize(window,
-								 &temp_left, &temp_top,
-								 &temp_right, &temp_bottom);
+							   &temp_left, &temp_top,
+							   &temp_right, &temp_bottom);
 		Result result = getError();
 		if (check(result)) {
 			*left = temp_left;
@@ -3560,8 +3560,8 @@ namespace VKFW_NAMESPACE {
 		return glfwGetWindowMonitor(window);
 	}
 	VKFW_INLINE void setWindowMonitor(GLFWwindow *window, GLFWmonitor *monitor,
-										int xpos, int ypos, size_t width, size_t height,
-										size_t refreshRate) {
+									  int xpos, int ypos, size_t width, size_t height,
+									  size_t refreshRate) {
 		glfwSetWindowMonitor(window, monitor, xpos, ypos,
 							 static_cast<int>(width), static_cast<int>(height),
 							 static_cast<int>(refreshRate));
@@ -3747,14 +3747,14 @@ namespace VKFW_NAMESPACE {
 	VKFW_NODISCARD_WHEN_NO_EXCEPTIONS VKFW_INLINE typename ResultValueType<void>::type
 	Window::setSize(std::tuple<size_t, size_t> size) const {
 		glfwSetWindowSize(m_window,
-							static_cast<int>(std::get<0>(size)),
-							static_cast<int>(std::get<1>(size)));
+						  static_cast<int>(std::get<0>(size)),
+						  static_cast<int>(std::get<1>(size)));
 		return createResultValue(getError(), VKFW_NAMESPACE_STRING"::Window::setSize");
 	}
 
 	VKFW_NODISCARD_WHEN_NO_EXCEPTIONS VKFW_INLINE typename ResultValueType<void>::type
 	Window::setSizeLimits(size_t minimum_width, size_t minimum_height,
-							size_t maximum_width, size_t maximum_height) const {
+						  size_t maximum_width, size_t maximum_height) const {
 		glfwSetWindowSizeLimits(m_window,
 								static_cast<int>(minimum_width),
 								static_cast<int>(minimum_height),
@@ -3764,7 +3764,7 @@ namespace VKFW_NAMESPACE {
 	}
 	VKFW_NODISCARD_WHEN_NO_EXCEPTIONS VKFW_INLINE typename ResultValueType<void>::type
 	Window::setSizeLimits(std::tuple<size_t, size_t> minimum_size,
-							std::tuple<size_t, size_t> maximum_size) const {
+						  std::tuple<size_t, size_t> maximum_size) const {
 		glfwSetWindowSizeLimits(m_window,
 								static_cast<int>(std::get<0>(minimum_size)),
 								static_cast<int>(std::get<1>(minimum_size)),
@@ -3847,8 +3847,8 @@ namespace VKFW_NAMESPACE {
 	Window::getFrameSize(size_t *left, size_t *top, size_t *right, size_t *bottom) const {
 		int temp_left, temp_top, temp_right, temp_bottom;
 		glfwGetWindowFrameSize(m_window,
-								 &temp_left, &temp_top,
-								 &temp_right, &temp_bottom);
+							   &temp_left, &temp_top,
+							   &temp_right, &temp_bottom);
 		Result result = getError();
 		if (check(result)) {
 			*left = temp_left;
@@ -3868,8 +3868,8 @@ namespace VKFW_NAMESPACE {
 		std::tuple<size_t, size_t, size_t, size_t> output;
 		int temp_left, temp_top, temp_right, temp_bottom;
 		glfwGetWindowFrameSize(m_window,
-								 &temp_left, &temp_top,
-								 &temp_right, &temp_bottom);
+							   &temp_left, &temp_top,
+							   &temp_right, &temp_bottom);
 		Result result = getError();
 		if (check(result)) {
 			std::get<0>(output) = temp_left;
@@ -4002,7 +4002,7 @@ namespace VKFW_NAMESPACE {
 	}
 	VKFW_NODISCARD_WHEN_NO_EXCEPTIONS VKFW_INLINE typename ResultValueType<void>::type
 	Window::setMonitor(Monitor const &monitor, int xpos, int ypos,
-						 size_t width, size_t height, size_t refreshRate) const {
+					   size_t width, size_t height, size_t refreshRate) const {
 		glfwSetWindowMonitor(m_window, monitor, xpos, ypos,
 							 static_cast<int>(width), static_cast<int>(height),
 							 static_cast<int>(refreshRate));
@@ -4010,7 +4010,7 @@ namespace VKFW_NAMESPACE {
 	}
 	VKFW_NODISCARD_WHEN_NO_EXCEPTIONS VKFW_INLINE typename ResultValueType<void>::type
 	Window::setMonitor(Monitor const &monitor, std::tuple<int, int> pos,
-						 std::tuple<size_t, size_t> size, size_t refreshRate) const {
+					   std::tuple<size_t, size_t> size, size_t refreshRate) const {
 		glfwSetWindowMonitor(m_window, monitor, std::get<0>(pos), std::get<1>(pos),
 							 static_cast<int>(std::get<0>(size)), static_cast<int>(std::get<1>(size)),
 							 static_cast<int>(refreshRate));
