@@ -2032,6 +2032,7 @@ namespace VKFW_NAMESPACE {
 			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(CenterCursor)> centerCursor_ = nullopt,
 			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(TransparentFramebuffer)> transparentFramebuffer_ = nullopt,
 			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(FocusOnShow)> focusOnShow_ = nullopt,
+			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(MousePassthrough)> mousePassthrough_ = nullopt,
 			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(ScaleToMonitor)> scaleToMonitor_ = nullopt,
 			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(RedBits)> redBits_ = nullopt,
 			OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(GreenBits)> greenBits_ = nullopt,
@@ -2076,6 +2077,7 @@ namespace VKFW_NAMESPACE {
 		, centerCursor(centerCursor_)
 		, transparentFramebuffer(transparentFramebuffer_)
 		, focusOnShow(focusOnShow_)
+		, mousePassthrough(mousePassthrough_)
 		, scaleToMonitor(scaleToMonitor_)
 		, redBits(redBits_)
 		, greenBits(greenBits_)
@@ -2131,6 +2133,8 @@ namespace VKFW_NAMESPACE {
 			transparentFramebuffer = nullopt;
 		OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(FocusOnShow)>
 			focusOnShow = nullopt;
+		OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(MousePassthrough)>
+			mousePassthrough = nullopt;
 		OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(ScaleToMonitor)>
 			scaleToMonitor = nullopt;
 		OptionalWindowHint<WindowHint::VKFW_ENUMERATOR(RedBits)>
@@ -2217,6 +2221,7 @@ namespace VKFW_NAMESPACE {
 		if (!check(result = setWindowHint(hints.centerCursor))) return result;
 		if (!check(result = setWindowHint(hints.transparentFramebuffer))) return result;
 		if (!check(result = setWindowHint(hints.focusOnShow))) return result;
+		if (!check(result = setWindowHint(hints.mousePassthrough))) return result;
 		if (!check(result = setWindowHint(hints.scaleToMonitor))) return result;
 		if (!check(result = setWindowHint(hints.redBits))) return result;
 		if (!check(result = setWindowHint(hints.greenBits))) return result;
